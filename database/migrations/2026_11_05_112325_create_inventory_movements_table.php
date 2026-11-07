@@ -11,10 +11,31 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inventory_movements', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+    
+Schema::create('inventory_movements', function (Blueprint $table) {
+    $table->id();
+
+    $table->foreignId('product_id')
+        ->constrained()
+        ->restrictOnDelete();
+
+    $table->foreignId('user_id')
+        ->nullable()
+        ->constrained()
+        ->nullOnDelete();
+
+    $table->string('type', 30);
+
+    $table->unsignedInteger('quantity');
+
+    $table->unsignedInteger('stock_before');
+
+    $table->unsignedInteger('stock_after');
+
+    $table->string('description')->nullable();
+
+    $table->timestamps();
+});
     }
 
     /**
