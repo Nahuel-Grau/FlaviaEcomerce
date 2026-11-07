@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
@@ -17,6 +18,7 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
+    
     /**
      * Get the attributes that should be cast.
      *
@@ -29,4 +31,24 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function addresses(): HasMany
+{
+    return $this->hasMany(Address::class);
+}
+
+public function carts(): HasMany
+{
+    return $this->hasMany(Cart::class);
+}
+
+public function orders(): HasMany
+{
+    return $this->hasMany(Order::class);
+}
+
+public function inventoryMovements(): HasMany
+{
+    return $this->hasMany(InventoryMovement::class);
+}
 }
