@@ -6,6 +6,11 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <title>Mi Ecommerce</title>
+
         @fonts
 
         <!-- Styles / Scripts -->

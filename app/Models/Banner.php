@@ -14,11 +14,16 @@ class Banner extends Model
         'starts_at',
         'ends_at',
         'is_active',
+        'position',
     ];
 
-    protected $casts = [
-        'starts_at' => 'datetime',
-        'ends_at' => 'datetime',
-        'is_active' => 'boolean',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'is_active' => 'boolean',
+            'starts_at' => 'datetime',
+            'ends_at' => 'datetime',
+            'position' => 'integer',
+        ];
+    }
 }
