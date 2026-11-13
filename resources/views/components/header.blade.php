@@ -17,10 +17,10 @@
 
             <nav class="mobile-navigation" aria-label="Navegación móvil">
                 <a href="{{ route('home') }}">Inicio</a>
-                <a href="{{ url('/productos?categoria=mujer') }}">Mujer</a>
-                <a href="{{ url('/productos?categoria=hombre') }}">Hombre</a>
-                <a href="{{ url('/novedades') }}">Novedades</a>
-                <a href="{{ url('/ofertas') }}">Ofertas</a>
+                <a href="{{ route('catalog.women') }}">Mujer</a>
+                <a href="{{ route('catalog.men') }}">Hombre</a>
+                <a href="{{ route('catalog.new') }}">Novedades</a>
+                <a href="{{ route('catalog.offers') }}">Ofertas</a>
             </nav>
         </details>
 
@@ -67,25 +67,11 @@
 
     {{-- Navegación de escritorio --}}
     <nav class="desktop-navigation" aria-label="Navegación principal">
-
         <a href="{{ route('home') }}">Inicio</a>
-
-        <a href="{{ url('/productos?categoria=mujer') }}">
-            Mujer
-        </a>
-
-        <a href="{{ url('/productos?categoria=hombre') }}">
-            Hombre
-        </a>
-
-        <a href="{{ url('/novedades') }}">
-            Novedades
-        </a>
-
-        <a href="{{ url('/ofertas') }}" class="nav-offers">
-            Ofertas
-        </a>
-
+        <a href="{{ route('catalog.women') }}">Mujer</a>
+        <a href="{{ route('catalog.men') }}">Hombre</a>
+        <a href="{{ route('catalog.new') }}">Novedades</a>
+        <a href="{{ route('catalog.offers') }}">Ofertas</a>
     </nav>
 
 </header>
